@@ -5,12 +5,14 @@ import axios from "axios";
 import { store } from './store';
 
 //import components
-import AppSearchBar from './components/AppSearchBar.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from "./components/AppMain.vue";
 
 export default {
   name: "app",
   components: {
-    AppSearchBar,
+    AppHeader,
+    AppMain,
   },
 
   data() {
@@ -27,8 +29,6 @@ export default {
       if(store.searchTxt !== ""){
         endPoint += `${store.searchTxt}`
       }
-
-
       axios.get(endPoint)
         .then(response => {
           store.movieList = response.data.results;
@@ -47,7 +47,8 @@ export default {
 </script>
 
 <template>
-  <AppSearchBar @startRequest="getRequest"/>
+  <AppHeader @search="getRequest"/>
+  <AppMain />
 </template>
 
 <style lang="scss">
