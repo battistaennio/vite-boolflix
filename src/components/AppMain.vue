@@ -17,7 +17,10 @@ export default {
 
 <template>
     <section>
+        <h2>Film:</h2>
         <FilmCard v-for="(film, i) in store.movieList" :key="i" :details="film"/>
+
+        <h2>Serie TV:</h2>
     </section>
 </template>
 
