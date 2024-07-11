@@ -2,6 +2,7 @@
 export default {
     name: "FilmCard",
     props: { details: Object },
+
     computed: {
         flagUrl() {
             return this.showFlag(this.details.original_language);
@@ -20,17 +21,18 @@ export default {
             } else {
                 return "";
             }
-        }
+        },
     }
 }
 </script>
 
 <template>
     <div>
+        <img :src="`https://image.tmdb.org/t/p/w342/${details.poster_path}`" :alt="details.title">
         <span>Titolo: {{ details.title }}</span>
         <span>Titolo originale: {{ details.original_title }}</span>
         <span>Lingua:</span>
-        <img v-if="flagUrl" :src="flagUrl" alt="Flag">
+        <img class="flag" v-if="flagUrl" :src="flagUrl" alt="Flag">
         <span v-else>{{details.original_language}}</span>
         <span>Voto: {{ details.vote_average }}</span>
     </div>
@@ -46,7 +48,7 @@ div {
         display: block;
     }
 
-    img {
+    img.flag {
         width: 25px;
         height: 15px;
     }

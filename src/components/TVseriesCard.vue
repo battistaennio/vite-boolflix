@@ -27,10 +27,11 @@ export default {
 
 <template>
     <div>
+        <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" :alt="info.title">
         <span>Titolo: {{ info.name }}</span>
         <span>Titolo originale: {{ info.original_name }}</span>
         <span>Lingua:</span>
-        <img v-if="flagUrl" :src="flagUrl" alt="Flag">
+        <img class="flag" v-if="flagUrl" :src="flagUrl" alt="Flag">
         <span v-else>{{info.original_language}}</span>
         <span>Voto: {{ info.vote_average }}</span>
     </div>
@@ -46,7 +47,7 @@ div {
         display: block;
     }
 
-    img {
+    img.flag {
         width: 25px;
         height: 15px;
     }
