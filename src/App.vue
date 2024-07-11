@@ -22,9 +22,8 @@ export default {
   },
 
   methods: {
-    getRequest() {
-      console.log("click");
-      let endPoint = store.apiURL;
+    getFilm() {
+      let endPoint = store.apiURLfilm;
 
       if(store.searchTxt !== ""){
         endPoint += `${store.searchTxt}`
@@ -32,22 +31,43 @@ export default {
       axios.get(endPoint)
         .then(response => {
           store.movieList = response.data.results;
-          console.log(store.movieList);
         })
         .catch(error => {
           console.log(error);
         })
     },
 
+    getTVseries(){
+      let endPoint = store.apiURLtvSeries;
+
+    if(store.searchTxt !== ""){
+        endPoint += `${store.searchTxt}`
+    }
+    axios.get(endPoint)
+        .then(response => {
+          store.TVseriesList = response.data.results;
+      })
+        .catch(error => {
+          console.log(error);
+      })
+
+    },
+
+    getRequests(){
+      this.getFilm(),
+      this.getTVseries()
+    }
+
+
   },
   created() {
-    this.getRequest();
+    this.getRequests();
   }
 }
 </script>
 
 <template>
-  <AppHeader @search="getRequest"/>
+  <AppHeader @search="getRequests"/>
   <AppMain />
 </template>
 

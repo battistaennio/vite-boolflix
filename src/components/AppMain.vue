@@ -1,11 +1,13 @@
 <script>
 import { store } from '../store';
 import FilmCard from './FilmCard.vue';
+import TVseriesCard from './TVseriesCard.vue';
 
 export default {
     name: "AppMain",
     components: {
         FilmCard,
+        TVseriesCard,
     },
     data(){
         return{
@@ -20,7 +22,8 @@ export default {
         <h2>Film:</h2>
         <FilmCard v-for="(film, i) in store.movieList" :key="i" :details="film"/>
 
-        <h2>Serie TV:</h2>
+        <h2>TV Series:</h2>
+        <TVseriesCard v-for="series in store.TVseriesList" :info="series"/>
     </section>
 </template>
 
