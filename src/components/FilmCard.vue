@@ -1,5 +1,5 @@
 <script>
-import { store, showFlag } from '../store';
+import { store, showFlag, voteToNumber } from '../store';
 
 export default {
     name: "FilmCard",
@@ -16,7 +16,8 @@ export default {
         }
     },
     methods: {
-        showFlag
+        showFlag,
+        voteToNumber
     }
 }
 </script>
@@ -30,7 +31,7 @@ export default {
         <span>Lingua:</span>
         <img class="flag" v-if="flagUrl" :src="flagUrl">
         <span v-else>{{details.original_language}}</span>
-        <span>Voto: {{ details.vote_average }}</span>
+        <span>Voto: {{ voteToNumber(details.vote_average) }}</span>
     </div>
 </template>
 

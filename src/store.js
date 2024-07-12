@@ -26,3 +26,11 @@ export function showFlag(lingua) {
         return "";
     }
 }
+
+export function voteToNumber(voto) {
+    let convert = parseInt(voto);
+    let number = Math.round((convert - 1) * (5 - 1) / (10 - 1) + 1);
+
+    return number
+
+}

@@ -1,5 +1,5 @@
 <script>
-import { store, showFlag } from '../store';
+import { store, showFlag, voteToNumber } from '../store';
 
 export default {
     name: "TVseriesCard",
@@ -15,7 +15,8 @@ export default {
         }
     },
     methods: {
-        showFlag
+        showFlag,
+        voteToNumber
     }
 }
 </script>
@@ -29,7 +30,7 @@ export default {
         <span>Lingua:</span>
         <img class="flag" v-if="flagUrl" :src="flagUrl">
         <span v-else>{{info.original_language}}</span>
-        <span>Voto: {{ info.vote_average }}</span>
+        <span>Voto: {{ voteToNumber(info.vote_average) }}</span>
     </div>
 </template>
 
