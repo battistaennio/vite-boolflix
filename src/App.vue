@@ -57,7 +57,8 @@ export default {
 
     getRequests(){
       this.getFilm(),
-      this.getTVseries()
+      this.getTVseries(),
+      store.searchTxt= ""
     }
 
 
