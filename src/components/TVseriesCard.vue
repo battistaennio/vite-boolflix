@@ -27,11 +27,12 @@ export default {
 
 <template>
     <div>
-        <img :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" :alt="info.title">
+        <img v-if="info.poster_path !== null" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" :alt="info.title">
+        <span v-else>copertina non disponibile</span>
         <span>Titolo: {{ info.name }}</span>
         <span>Titolo originale: {{ info.original_name }}</span>
         <span>Lingua:</span>
-        <img class="flag" v-if="flagUrl" :src="flagUrl" alt="Flag">
+        <img class="flag" v-if="flagUrl" :src="flagUrl">
         <span v-else>{{info.original_language}}</span>
         <span>Voto: {{ info.vote_average }}</span>
     </div>
