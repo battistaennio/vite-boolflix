@@ -31,7 +31,10 @@ export default {
         <span>Lingua:</span>
         <img class="flag" v-if="flagUrl" :src="flagUrl">
         <span v-else>{{details.original_language}}</span>
-        <span>Voto: {{ voteToNumber(details.vote_average) }}</span>
+        <span>
+            Voto:
+            <font-awesome-icon v-for="n in voteToNumber(details.vote_average)" :key="n" icon="star" />
+        </span>
     </div>
 </template>
 
