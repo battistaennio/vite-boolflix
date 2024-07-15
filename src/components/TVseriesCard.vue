@@ -45,31 +45,41 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use "../style/partials/mixins" as *;
 .card-box{
-    min-height: 100px;
     background-color: black;
     border: 1px solid black;
-    width: 342px;
+    @include cardHeightWidth;
+
+    &:hover{
+        img:first-child{
+            display: none;
+        }
+
+        .text-card{
+            display: block;
+        }
+    }
 
     .no-poster{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 342px;
-        height: 513px;
+        @include cardHeightWidth;
     }
 
     img{
-        width: 342px;
-        height: 513px;
-
+        @include cardHeightWidth;
     }
 
     .text-card{
         padding: 10px;
+        display: none;
+
 
         .section-txt{
             margin-bottom: 7px;
+            width: 100%;
 
             img.flag {
             width: 25px;
