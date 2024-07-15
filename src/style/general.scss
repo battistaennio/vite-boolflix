@@ -23,13 +23,14 @@ body {
     &:hover {
         transform: rotateY(180deg);
 
-        img:first-child {
+        img:first-child,
+        span.no-poster {
             display: none;
         }
 
         .text-card {
             display: block;
-            transform: rotateY(180deg);
+            transform: rotateY(-180deg);
         }
     }
 

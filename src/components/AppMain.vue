@@ -38,10 +38,8 @@ export default {
 @use "../style/partials/variables.scss" as *;
 
 h2{
-    #main-title{
-        text-align: center;
-        margin: 30px;
-    }
+    text-align: center;
+    margin: 30px;
 }
 
 .cards-container{

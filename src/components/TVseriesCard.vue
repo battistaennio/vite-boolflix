@@ -24,7 +24,7 @@ export default {
 <template>
     <div class="card-box">
         <img v-if="info.poster_path !== null" :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`" :alt="info.title">
-        <span v-else class="no-poster">copertina non disponibile</span>
+        <span v-else class="no-poster">copertina non disponibile <br>Titolo: {{ info.title }}</span>
         <div class="text-card">
             <div class="section-txt">
                 <strong>Titolo:</strong> <span>{{ info.name }}</span>
