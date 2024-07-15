@@ -50,55 +50,5 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use "../style/partials/mixins" as *;
-
-.card-box{
-    background-color: black;
-    border: 1px solid black;
-    @include cardHeightWidth;
-
-    &:hover{
-        img:first-child{
-            display: none;
-        }
-
-        .text-card{
-            display: block;
-        }
-    }
-
-    .no-poster{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include cardHeightWidth;
-        &:hover{
-            display: none;
-
-            .text-card{
-                display: block;
-            }
-        }
-    }
-
-    img{
-        @include cardHeightWidth;
-    }
-
-    .text-card{
-        padding: 10px;
-        display: none;
-
-        .section-txt{
-            margin-bottom: 7px;
-
-            img.flag {
-            width: 25px;
-            height: 15px;
-            }
-
-        }
-
-    }
-}
+@use "../style/general.scss" as *;
 </style>
