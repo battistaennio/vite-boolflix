@@ -28,10 +28,10 @@ export default {
         <span v-else class="no-poster">copertina non disponibile</span>
         <div class="text-card">
             <div class="section-txt">
-                <strong>Titolo:</strong> <span>{{ details.name }}</span>
+                <strong>Titolo:</strong> <span>{{ details.title }}</span>
             </div>
             <div class="section-txt">
-                <strong>Titolo originale:</strong> <span>{{ details.original_name }}</span>
+                <strong>Titolo originale:</strong> <span>{{ details.original_title }}</span>
             </div>
             <div class="section-txt">
                 <strong>Lingua: </strong>
