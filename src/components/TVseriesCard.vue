@@ -40,6 +40,9 @@ export default {
             <div class="section-txt">
                 <strong>Voto: </strong> <font-awesome-icon v-for="n in voteToNumber(info.vote_average)" :key="n" icon="star" />
             </div>
+            <div class="section-txt">
+                <strong>Overview: </strong> <span>{{ info.overview }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -66,6 +69,13 @@ export default {
         align-items: center;
         justify-content: center;
         @include cardHeightWidth;
+        &:hover{
+            display: none;
+
+            .text-card{
+                display: block;
+            }
+        }
     }
 
     img{
